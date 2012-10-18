@@ -6,3 +6,8 @@ alias cl='clear'
 alias ll='ls -lh'
 alias be='bundle exec'
 alias ber='bundle exec rspec'
+
+
+# repository alias
+repo_requirejs='git://github.com/jrburke/requirejs.git'
+repo_text='git://github.com/requirejs/text.git'
