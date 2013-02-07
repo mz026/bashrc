@@ -1,9 +1,31 @@
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\[\1\]/'
+function git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/*\ //'
+}
+function git_short_hash {
+  git rev-parse --short HEAD 2> /dev/null
 }
 
+c_reset="\[$(tput sgr0)\]"
+c_black="\[$(tput setaf 0)\]"
+c_red="\[$(tput setaf 1)\]"
+c_green="\[$(tput setaf 2)\]"
+c_yellow="\[$(tput setaf 3)\]"
+c_blue="\[$(tput setaf 4)\]"
+c_purple="\[$(tput setaf 5)\]"
+c_cyan="\[$(tput setaf 6)\]"
+c_white="\[$(tput setaf 7)\]"
+c_bold="\[$(tput bold)\]"
+
 set -o vi
-PS1="\u\[$(tput sgr0)\]@\h: \[$(tput setaf 2)\]\w\[$(tput sgr0)\]\n\[$(tput setaf 4)\]\$(parse_git_branch)\[$(tput setaf 7)\]$\[$(tput sgr0)\] "
+
+
+ps1_git="$c_black$c_bold[$c_reset$c_blue\$(git_branch)$c_reset-$c_yellow\$(git_short_hash)$c_bold$c_black]$c_reset"
+ps1_prompt="$c_white\$$c_reset "
+ps1_location="\u@\h: $c_green\w"
+
+PS1="$ps1_location\n$ps1_git$ps1_prompt"
+
+
 
 # aliases
 alias cl='clear'
