@@ -5,6 +5,7 @@ function git_short_hash {
   git rev-parse --short HEAD 2> /dev/null
 }
 
+# colors
 c_reset="\[$(tput sgr0)\]"
 c_black="\[$(tput setaf 0)\]"
 c_red="\[$(tput setaf 1)\]"
@@ -16,9 +17,8 @@ c_cyan="\[$(tput setaf 6)\]"
 c_white="\[$(tput setaf 7)\]"
 c_bold="\[$(tput bold)\]"
 
-set -o vi
 
-
+# prompt
 ps1_git="$c_black$c_bold[$c_reset$c_blue\$(git_branch)$c_reset-$c_yellow\$(git_short_hash)$c_bold$c_black]$c_reset"
 ps1_prompt="$c_white\$$c_reset "
 ps1_location="\u@\h: $c_green\w"
@@ -26,12 +26,26 @@ ps1_location="\u@\h: $c_green\w"
 PS1="$ps1_location\n$ps1_git$ps1_prompt"
 
 
+# use vi to control command line
+set -o vi
 
 # aliases
 alias cl='clear'
 alias ll='ls -lh'
 alias be='bundle exec'
 alias ber='bundle exec rspec'
+
+# git aliases
+alias gst='git st'
+alias gl='git l'
+alias gps='git ps'
+alias grh='git reset --hard'
+alias gm='git merge'
+alias gf='git fetch'
+alias ga='git aa'
+alias gci='git ci'
+alias gr='git remote -v'
+
 
 
 # repository alias
