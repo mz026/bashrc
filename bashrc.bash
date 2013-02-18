@@ -39,12 +39,18 @@ alias ber='bundle exec rspec'
 alias gst='git st'
 alias gl='git l'
 alias gps='git ps'
+alias gpsod='git ps origin development'
+alias gpsom='git ps origin master'
+alias gbr='git br'
 alias grh='git reset --hard'
 alias gmg='git merge'
+alias gmgod='git merge origin development'
+alias gmgom='git merge origin master'
 alias gft='git fetch'
 alias ga='git aa'
 alias gci='git ci'
 alias gr='git remote -v'
+alias gco='git co'
 
 
 
