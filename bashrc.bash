@@ -32,8 +32,13 @@ set -o vi
 # aliases
 alias cl='clear'
 alias ll='ls -lh'
+
+# rails aliases
 alias be='bundle exec'
 alias ber='bundle exec rspec'
+
+# php aliases
+alias phpunitc='phpunit --colors'
 
 # git aliases
 alias gst='git st'
