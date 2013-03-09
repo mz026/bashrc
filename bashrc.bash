@@ -32,6 +32,7 @@ set -o vi
 # aliases
 alias cl='clear'
 alias ll='ls -lh'
+alias vi='vim'
 
 # rails aliases
 alias be='bundle exec'
