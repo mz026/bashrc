@@ -19,9 +19,9 @@ c_bold="\[$(tput bold)\]"
 
 
 # prompt
-ps1_git="$c_black$c_bold[$c_reset$c_blue\$(git_branch)$c_reset-$c_yellow\$(git_short_hash)$c_bold$c_black]$c_reset"
-ps1_prompt="$c_white\$$c_reset "
 ps1_location="\u@\h: $c_green\w"
+ps1_git="$c_reset$c_bold[$c_reset$c_blue\$(git_branch)$c_reset-$c_yellow\$(git_short_hash)$c_bold$c_reset]"
+ps1_prompt="$c_white\$$c_reset "
 
 PS1="$ps1_location\n$ps1_git$ps1_prompt"
 
